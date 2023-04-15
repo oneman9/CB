@@ -1,0 +1,11 @@
+[couchbase-main]
+172.30.31.110
+
+[couchbase-nodes-data]
+172.30.31.110
+172.30.32.110
+172.30.33.110
+
+[couchbase-nodes-index]
+172.30.31.210
+172.30.32.210

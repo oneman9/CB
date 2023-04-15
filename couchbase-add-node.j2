@@ -1,0 +1,9 @@
+{% for host in groups['couchbase-nodes'] %}
+/opt/couchbase/bin/couchbase-cli server-add -c ${cluster_name}:8091 -u ${admin_user} -p ${admin_password} --server-add={{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}:8091 --server-add-username=${admin_user} --server-add-password=${admin_password}
+{% endfor %}
+{% for host in groups['couchbase-nodes-data'] %}
+/opt/couchbase/bin/couchbase-cli server-add -c ${cluster_name}:8091 -u ${admin_user} -p ${admin_password} --server-add={{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}:8091 --services "data" --server-add-username=${admin_user} --server-add-password=${admin_password}
+{% endfor %}
+{% for host in groups['couchbase-nodes-index'] %}
+/opt/couchbase/bin/couchbase-cli server-add -c ${cluster_name}:8091 -u ${admin_user} -p ${admin_password} --server-add={{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}:8091 --services "index"   --index-storage-setting "default" --server-add-username=${admin_user} --server-add-password=${admin_password}
+{% endfor %}
