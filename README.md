@@ -2,7 +2,7 @@ Couchbase Ansible Playbook
 ===========================
 created By : Amihai Habani
 Date Of Creation : 2018.3.10
-This project contains JumboMail playbooks to Create Couchbase cluster.
+This project contains playbooks to Create Couchbase cluster.
 
 
 Note: the current scripts are only working on Ubuntu 16.04  for now
